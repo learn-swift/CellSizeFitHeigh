@@ -11,14 +11,11 @@ import UIKit
 class ViewController: UIViewController {
 	@IBOutlet weak var myTableView: UITableView!
 	let estimatedRowHeight = CGFloat(50)
-	let data = [
-		"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-		"remaining ",
-		"scrambled scrambled",
-		"It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-		"remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-		"remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset ",
-		"remaining essentially unchanged. "
+	let datas = [
+		MyObject(content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", image: "obama"),
+		MyObject(content: "when an unknown printer took a galley of type and scrambled it to make a type specimen book.", image: "obama"),
+		MyObject(content: "Lorem Ipsum is simply dummy text of.", image: ""),
+		MyObject(content: "Lorem Ipsum is simply dummy text of.", image: "")
 	]
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -42,7 +39,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return data.count
+		return datas.count
 	}
 	
 	func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -52,10 +49,20 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath) as! MyCell
-		cell.labelContent.text = data[indexPath.row]
+		cell.setData(datas[indexPath.row])
 		return cell
 	}
 	
+	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+	}
+}
+class MyObject {
+	var image: String?
+	var content: String?
+	
+	init(content: String, image: String) {
+		self.image = image
+		self.content = content
 	}
 }

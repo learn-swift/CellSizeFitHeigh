@@ -394,6 +394,7 @@
 				8A2708D31C73050A00AA179C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8A2708D41C73050A00AA179C /* Build configuration list for PBXNativeTarget "CellSizeFitHeighTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +403,7 @@
 				8A2708D61C73050A00AA179C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

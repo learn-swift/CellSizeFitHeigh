@@ -62,6 +62,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="imageTop" destination="980-ag-3LB" id="eEO-ej-IYy"/>
                 <outlet property="labelContent" destination="d58-1y-hBe" id="lKV-Bf-eJa"/>
             </connections>
             <point key="canvasLocation" x="133.5" y="264"/>
