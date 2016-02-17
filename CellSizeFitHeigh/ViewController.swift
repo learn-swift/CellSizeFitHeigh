@@ -50,6 +50,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath) as! MyCell
 		cell.setData(datas[indexPath.row])
+        if((indexPath.row % 2) > 0) {
+            cell.imageHeightConstraint.constant = 0
+        }
 		return cell
 	}
 	

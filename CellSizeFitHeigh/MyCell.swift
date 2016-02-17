@@ -12,6 +12,8 @@ class MyCell: UITableViewCell {
 	
 	@IBOutlet weak var imageTop: UIImageView!
 	@IBOutlet weak var labelContent: UILabel!
+    
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
 	override func awakeFromNib() {
 		super.awakeFromNib()
 	}
